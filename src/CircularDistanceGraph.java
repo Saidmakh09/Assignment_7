@@ -12,10 +12,9 @@ public class CircularDistanceGraph {
     public static void main(String[] args) {
         System.setProperty("org.graphstream.ui", "swing");
 
-        // ——— Change this to your input string ———
         String input = "[ (I, 2) , (A, 5) , (E, 4) , (F,2) , (T, 2) , (S, 3) ]";
 
-        // 1) Parse
+        // Parsing
         Pattern p = Pattern.compile("\\(\\s*([A-Za-z0-9]+)\\s*,\\s*(\\d+)\\s*\\)");
         Matcher m = p.matcher(input);
         List<String> verts = new ArrayList<>();
@@ -31,7 +30,7 @@ public class CircularDistanceGraph {
             return;
         }
 
-        // 2) Build graph
+        // Building the graph
         Graph graph = new SingleGraph("CircularDistance");
         graph.setAttribute("ui.stylesheet",
                 "node { fill-color: white; size: 40px; text-size: 20px; }" +
